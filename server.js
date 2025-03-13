@@ -8,22 +8,9 @@ const PORT = process.env.PORT || 3000;
 // Serve static files
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Define routes
+// Serve index.html as the homepage
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'views', 'index.html'));
-});
-
-app.get('/about', (req, res) => {
-    res.sendFile(path.join(__dirname, 'views', 'about.html'));
-});
-
-app.get('/contact', (req, res) => {
-    res.sendFile(path.join(__dirname, 'views', 'contact.html'));
-});
-
-// Serve blog page
-app.get('/blog', (req, res) => {
-    res.sendFile(path.join(__dirname, 'views', 'blog.html'));
 });
 
 // Serve blog posts JSON
