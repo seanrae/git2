@@ -1,11 +1,31 @@
-body{
+body {
     font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+h1 {
     text-align: center;
+    color: #333;
 }
-nav{
-    margin-top: 20px;
+
+nav {
+    text-align: center;
+    margin-bottom: 20px;
 }
-a{
+
+nav a {
     text-decoration: none;
-    margin: 0 10px;
+    margin: 0 15px;
+    color: #007BFF;
+    font-weight: bold;
+}
+
+.post {
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
 }
