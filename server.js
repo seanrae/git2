@@ -8,20 +8,22 @@ const PORT = process.env.PORT || 3000;
 // Serve static files
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Serve index.html as the homepage
+// Define routes
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'views', 'index.html'));
 });
 
-// Serve blog posts JSON
-app.get('/api/posts', (req, res) => {
-    fs.readFile(path.join(__dirname, 'data', 'posts.json'), 'utf8', (err, data) => {
-        if (err) {
-            res.status(500).json({ error: "Failed to load posts" });
-        } else {
-            res.json(JSON.parse(data));
-        }
-    });
+app.get('/about', (req, res) => {
+    res.sendFile(path.join(__dirname, 'views', 'about.html'));
+});
+
+app.get('/contact', (req, res) => {
+    res.sendFile(path.join(__dirname, 'views', 'contact.html'));
+});
+
+// Route to serve raw JSON data
+app.get('/blog', (req, res) => {
+    res.sendFile(path.join(__dirname, 'data', 'posts.json'));
 });
 
 // Start server
